@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = InitialGenerator
+build_property.ProjectDir = /Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/InitialGenerator/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
