@@ -5,7 +5,6 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Text;
 namespace JsonSchema.SourceGenerator
     
-public class MySourceGenerator
 {
     [Generator(LanguageNames.CSharp)]
     internal sealed partial class MySourceGenerator : IIncrementalGenerator

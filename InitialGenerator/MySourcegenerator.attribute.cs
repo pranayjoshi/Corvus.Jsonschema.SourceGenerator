@@ -24,5 +24,5 @@ internal sealed partial class MySourceGenerator
                                                         }
 
                                                         """;
-    
+        
 }
