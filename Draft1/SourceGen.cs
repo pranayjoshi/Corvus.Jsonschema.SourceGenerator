@@ -15,28 +15,31 @@ namespace Corvus.Json.SchemaGenerator
         public void Initialize(IncrementalGeneratorInitializationContext context)
         {
             // Set up code generation pipeline
-            var providerProvider = context.SyntaxProvider
+            var syntaxProvider = context.SyntaxProvider
                 .CreateSyntaxProvider(
-                    (s, _) => IsSyntaxTargetForGeneration(s),
-                    (ctx, _) => GetSemanticTargetForGeneration(ctx))
-                .Where(static x => x is not null);
+                    predicate: (s, _) => IsSyntaxTargetForGeneration(s),
+                    transform: (ctx, _) => GetSemanticTargetForGeneration(ctx))
+                .Where(symbol => symbol != null); // Filter out null results
 
-            var compilation = context.CompilationProvider.Combine(providerProvider.Collect());
+            var compilationAndSymbols = context.CompilationProvider.Combine(syntaxProvider.Collect());
 
-            context.RegisterSourceOutput(compilation,
-                (spc, source) => Execute(source.Left, source.Right, spc));
+            context.RegisterSourceOutput(compilationAndSymbols, (spc, source) => Execute(source.Left, source.Right, spc));
         }
 
         private static bool IsSyntaxTargetForGeneration(SyntaxNode node)
         {
-            // For this example, we'll generate code for all syntax nodes
-            return true;
+            // For this example, we'll generate code for all classes
+            return node is ClassDeclarationSyntax;
         }
 
-        private static bool GetSemanticTargetForGeneration(GeneratorSyntaxContext context)
+        private static ISymbol GetSemanticTargetForGeneration(GeneratorSyntaxContext context)
         {
-            // For this example, we'll generate code for all semantic targets
-            return true;
+            // We only care about class declarations
+            var classDeclarationSyntax = (ClassDeclarationSyntax)context.Node;
+
+            // Get the declared symbol for the class, and ensure it's actually a class symbol
+            var classSymbol = context.SemanticModel.GetDeclaredSymbol(classDeclarationSyntax);
+            return classSymbol;
         }
 
         private static void Execute(Compilation compilation, ImmutableArray<ISymbol> symbols, SourceProductionContext context)
