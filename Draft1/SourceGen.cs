@@ -29,27 +29,39 @@ namespace Corvus.Json.SchemaGenerator
 
         private static bool IsSyntaxTargetForGeneration(SyntaxNode node)
         {
-            // Determine if the syntax node should trigger code generation
+            // For this example, we'll generate code for all syntax nodes
             return true;
         }
 
         private static bool GetSemanticTargetForGeneration(GeneratorSyntaxContext context)
         {
-            // Perform semantic analysis and determine if code generation should be triggered
+            // For this example, we'll generate code for all semantic targets
             return true;
         }
 
         private static void Execute(Compilation compilation, ImmutableArray<ISymbol> symbols, SourceProductionContext context)
         {
-            // Generate the source code and add it to the context
+            // Generate a simple source code
             string sourceCode = GenerateSourceCode(compilation, symbols);
             context.AddSource("GeneratedSource.cs", SourceText.From(sourceCode, Encoding.UTF8));
         }
 
         private static string GenerateSourceCode(Compilation compilation, ImmutableArray<ISymbol> symbols)
         {
-            // Generate the source code based on the input compilation and symbols
-            return "// Generated code goes here";
+            // Generate a simple source code for demonstration
+            return @"
+using System;
+
+namespace GeneratedNamespace
+{
+    public class GeneratedClass
+    {
+        public void PrintMessage()
+        {
+            Console.WriteLine(""This is a generated class!"");
+        }
+    }
+}";
         }
     }
 }
