@@ -11,7 +11,7 @@
     <CompilerVisibleProperty Include="GenerateSource" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Draft1\Draft1.csproj" OutputItemType="Analyzer" />
+    <ProjectReference Include="..\..\Draft1\Draft1.csproj" OutputItemType="Analyzer" />
   </ItemGroup>
   <ItemGroup>
     <CompilerVisibleProperty Include="GenerateSource" />

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/Draft1/Draft1.csproj": {}
+    "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/Draft1/Draft1.csproj": {}
   },
   "projects": {
-    "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/Draft1/Draft1.csproj": {
+    "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/Draft1/Draft1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/Draft1/Draft1.csproj",
+        "projectUniqueName": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/Draft1/Draft1.csproj",
         "projectName": "Draft1",
-        "projectPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/Draft1/Draft1.csproj",
+        "projectPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/Draft1/Draft1.csproj",
         "packagesPath": "/Users/pranayjoshi/.nuget/packages/",
-        "outputPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/Draft1/obj/",
+        "outputPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/Draft1/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/NuGet.Config",

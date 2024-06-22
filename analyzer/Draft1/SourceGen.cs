@@ -49,7 +49,7 @@ namespace Corvus.Json.SchemaGenerator
             context.AddSource("GeneratedSource.cs", SourceText.From(sourceCode, Encoding.UTF8));
         }
 
-        private static string GenerateSourceCode()
+        private static string GenerateSourceCode(Compilation compilation, ImmutableArray<ISymbol> symbols)
         {
             return """
                    using System;
@@ -57,8 +57,7 @@ namespace Corvus.Json.SchemaGenerator
                    namespace GeneratedNamespace
                    {
                    
-                       [System.AttributeUsage(System.AttributeTargets.All, Inherited = false, AllowMultiple = true)]
-                       sealed class GeneratedAttribute : system.Attribute
+                       sealed class GeneratedAttribute : Attribute
                        {
                            public string JsonPath { get; }
                            public string Qualification { get; }
@@ -77,7 +76,7 @@ namespace Corvus.Json.SchemaGenerator
                        }
                        public class GeneratedClass
                        {
-                           public void PrintMessageN()
+                           public void PrintMessage()
                            {
                                Console.WriteLine("This is a generated class!");
                            }

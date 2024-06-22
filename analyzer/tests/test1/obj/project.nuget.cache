@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SDTlt/mK1+u47jyM8Ea4BurElMm76kT6UyeWM1vaShU8mKORzDgjRiCp7fE1ZuMSPjsuS4sPIR6fhpQkvpT66w==",
+  "dgSpecHash": "MAdbXG3h+2FJs7koucNQdmalfLjJUu3YMJykC0+KJjPfbuj207TV5ajO09jj9RQ2G+HJcOhPN+LcnzyY3GSNTQ==",
   "success": true,
-  "projectFilePath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/test1/test1.csproj",
+  "projectFilePath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test1/test1.csproj",
   "expectedPackageFiles": [
     "/Users/pranayjoshi/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/pranayjoshi/.nuget/packages/microsoft.codeanalysis/4.9.2/microsoft.codeanalysis.4.9.2.nupkg.sha512",

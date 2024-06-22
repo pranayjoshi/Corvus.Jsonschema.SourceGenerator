@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Dl0VuCNlYlkWiOabi63lywFuseSPiMws4EbiM2YdBwaTb4SH08IVFaYAj+barKzK+7bqcRx2tXktxyYheWjZVw==",
+  "dgSpecHash": "LwRB2BGspHK5aqsYCm5vfW3q29gGxHngUCurkXWOm2jIfdenngjnHRDZ9TUviIfErLnMKEV4aS9HVU9EFht2Jg==",
   "success": true,
-  "projectFilePath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/Draft1/Draft1.csproj",
+  "projectFilePath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/Draft1/Draft1.csproj",
   "expectedPackageFiles": [
     "/Users/pranayjoshi/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/pranayjoshi/.nuget/packages/microsoft.bcl.asyncinterfaces/8.0.0/microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
