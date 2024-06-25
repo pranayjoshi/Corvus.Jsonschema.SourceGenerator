@@ -1,8 +1,29 @@
 {
   "version": 2,
-  "dgSpecHash": "Dv2+FkUEJMalc9Er0Wzliu89PvlRXB+KDJ/ynDvIEfeyj5UpqZ9phfpNz3ePUO8YZ8E0E03cX7d7YrRS91frdA==",
+  "dgSpecHash": "X0UffhCYpyH/wwd5GmG0JYz0Ot4hJG8KGoEtIklJ/fdcgpcNMdm5hP3byPS9EAKiEEjRdA7Oa2V0k5VdvHyVWw==",
   "success": true,
   "projectFilePath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/Assembly.Level.Attribute/Assembly.Level.Attribute.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/Users/pranayjoshi/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/microsoft.codeanalysis/4.9.2/microsoft.codeanalysis.4.9.2.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/microsoft.codeanalysis.analyzers/3.3.4/microsoft.codeanalysis.analyzers.3.3.4.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/microsoft.codeanalysis.common/4.9.2/microsoft.codeanalysis.common.4.9.2.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/microsoft.codeanalysis.csharp/4.9.2/microsoft.codeanalysis.csharp.4.9.2.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/microsoft.codeanalysis.csharp.workspaces/4.9.2/microsoft.codeanalysis.csharp.workspaces.4.9.2.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/microsoft.codeanalysis.visualbasic/4.9.2/microsoft.codeanalysis.visualbasic.4.9.2.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/microsoft.codeanalysis.visualbasic.workspaces/4.9.2/microsoft.codeanalysis.visualbasic.workspaces.4.9.2.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/microsoft.codeanalysis.workspaces.common/4.9.2/microsoft.codeanalysis.workspaces.common.4.9.2.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/system.collections.immutable/8.0.0/system.collections.immutable.8.0.0.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/system.composition/8.0.0/system.composition.8.0.0.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/system.composition.attributedmodel/8.0.0/system.composition.attributedmodel.8.0.0.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/system.composition.convention/8.0.0/system.composition.convention.8.0.0.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/system.composition.hosting/8.0.0/system.composition.hosting.8.0.0.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/system.composition.runtime/8.0.0/system.composition.runtime.8.0.0.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/system.composition.typedparts/8.0.0/system.composition.typedparts.8.0.0.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/system.reflection.metadata/8.0.0/system.reflection.metadata.8.0.0.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/system.threading.channels/8.0.0/system.threading.channels.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -4,6 +4,72 @@
     "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/Assembly.Level.Attribute/Assembly.Level.Attribute.csproj": {}
   },
   "projects": {
+    "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/Draft1/Draft1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/Draft1/Draft1.csproj",
+        "projectName": "Draft1",
+        "projectPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/Draft1/Draft1.csproj",
+        "packagesPath": "/Users/pranayjoshi/.nuget/packages/",
+        "outputPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/Draft1/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/NuGet.Config",
+          "/Users/pranayjoshi/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "Microsoft.CodeAnalysis": {
+              "target": "Package",
+              "version": "[4.9.2, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/Assembly.Level.Attribute/Assembly.Level.Attribute.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -26,7 +92,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/Draft1/Draft1.csproj": {
+                "projectPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/Draft1/Draft1.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
