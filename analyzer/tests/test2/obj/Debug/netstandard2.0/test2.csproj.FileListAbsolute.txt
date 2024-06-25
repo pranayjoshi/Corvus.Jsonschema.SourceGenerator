@@ -1,0 +1,15 @@
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/obj/Debug/netstandard2.0/test2.csproj.AssemblyReference.cache
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/obj/Debug/netstandard2.0/test2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/obj/Debug/netstandard2.0/test2.AssemblyInfoInputs.cache
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/obj/Debug/netstandard2.0/test2.AssemblyInfo.cs
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/obj/Debug/netstandard2.0/test2.csproj.CoreCompileInputs.cache
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/obj/Debug/netstandard2.0/test2.sourcelink.json
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/bin/Debug/netstandard2.0/Draft2.deps.json
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/bin/Debug/netstandard2.0/test2.deps.json
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/bin/Debug/netstandard2.0/test2.dll
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/bin/Debug/netstandard2.0/test2.pdb
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/bin/Debug/netstandard2.0/Draft2.dll
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/bin/Debug/netstandard2.0/Draft2.pdb
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/obj/Debug/netstandard2.0/test2.csproj.Up2Date
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/obj/Debug/netstandard2.0/test2.dll
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.JsonSchema/Solutions/Corvus.Jsonschema.SourceGenerator/analyzer/tests/test2/obj/Debug/netstandard2.0/test2.pdb

@@ -11,10 +11,8 @@
     <CompilerVisibleProperty Include="GenerateSource" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Draft2\Draft2.csproj" OutputItemType="Analyzer" />
-  </ItemGroup>
-  <ItemGroup>
-    <CompilerVisibleProperty Include="GenerateSource" />
+<!--    <ProjectReference Include="..\..\Draft2\Draft2.csproj"  OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>-->
+    <ProjectReference Include="..\..\Draft2\Draft2.csproj"  OutputItemType="Analyzer" />
   </ItemGroup>
 
 </Project>

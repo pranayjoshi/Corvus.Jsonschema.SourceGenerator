@@ -7,8 +7,8 @@ namespace SourceGeneratorTest
     {
         static void Main(string[] args)
         {
+            var generatedClass = new GeneratedClass();
             generatedClass.PrintMessage();
-            gen.PrintDetails();
         }
     }
 }
