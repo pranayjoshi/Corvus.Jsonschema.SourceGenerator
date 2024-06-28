@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = JsonSchema.GSoC2024.AssemblyAttribute
+build_property.ProjectDir = /Users/pranayjoshi/Desktop/projects/CSharp/JsonSchema_Analyzer_qualification_task/JsonSchema.GSoC2024.AssemblyAttribute/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

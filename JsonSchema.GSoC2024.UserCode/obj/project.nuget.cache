@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZKSzNj1gjd7y35/v5NKD8vmqmY2Eh2KUtn5DyxGgZC0XjAuKsFTjlglXMBCT/9iR2+ja6Lb5LHnCV7N7HKTGyw==",
+  "success": true,
+  "projectFilePath": "/Users/pranayjoshi/Desktop/projects/CSharp/JsonSchema_Analyzer_qualification_task/JsonSchema.GSoC2024.UserCode/JsonSchema.GSoC2024.UserCode.csproj",
+  "expectedPackageFiles": [
+    "/Users/pranayjoshi/.nuget/packages/jsonschema.gsoc2024.existinglibrary/1.0.0/jsonschema.gsoc2024.existinglibrary.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

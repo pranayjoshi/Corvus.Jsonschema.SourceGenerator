@@ -1,0 +1,10 @@
+/Users/pranayjoshi/Downloads/JsonSchema.GSoC2024.CorvusQualification/JsonSchema.GSoC2024.ExistingLibrary/obj/Debug/netstandard2.0/package.csproj.AssemblyReference.cache
+/Users/pranayjoshi/Downloads/JsonSchema.GSoC2024.CorvusQualification/JsonSchema.GSoC2024.ExistingLibrary/obj/Debug/netstandard2.0/package.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pranayjoshi/Downloads/JsonSchema.GSoC2024.CorvusQualification/JsonSchema.GSoC2024.ExistingLibrary/obj/Debug/netstandard2.0/package.AssemblyInfoInputs.cache
+/Users/pranayjoshi/Downloads/JsonSchema.GSoC2024.CorvusQualification/JsonSchema.GSoC2024.ExistingLibrary/obj/Debug/netstandard2.0/package.AssemblyInfo.cs
+/Users/pranayjoshi/Downloads/JsonSchema.GSoC2024.CorvusQualification/JsonSchema.GSoC2024.ExistingLibrary/obj/Debug/netstandard2.0/package.csproj.CoreCompileInputs.cache
+/Users/pranayjoshi/Downloads/JsonSchema.GSoC2024.CorvusQualification/JsonSchema.GSoC2024.ExistingLibrary/bin/Debug/netstandard2.0/package.deps.json
+/Users/pranayjoshi/Downloads/JsonSchema.GSoC2024.CorvusQualification/JsonSchema.GSoC2024.ExistingLibrary/bin/Debug/netstandard2.0/package.dll
+/Users/pranayjoshi/Downloads/JsonSchema.GSoC2024.CorvusQualification/JsonSchema.GSoC2024.ExistingLibrary/bin/Debug/netstandard2.0/package.pdb
+/Users/pranayjoshi/Downloads/JsonSchema.GSoC2024.CorvusQualification/JsonSchema.GSoC2024.ExistingLibrary/obj/Debug/netstandard2.0/package.dll
+/Users/pranayjoshi/Downloads/JsonSchema.GSoC2024.CorvusQualification/JsonSchema.GSoC2024.ExistingLibrary/obj/Debug/netstandard2.0/package.pdb

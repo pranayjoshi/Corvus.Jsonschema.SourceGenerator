@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>JsonSchema.GSoC2024.ExistingLibrary</id>
+    <version>1.0.0</version>
+    <authors>JsonSchema.GSoC2024.ExistingLibrary</authors>
+    <developmentDependency>true</developmentDependency>
+    <description>Package Description</description>
+  </metadata>
+  <files>
+    <file src="/Users/pranayjoshi/Downloads/JsonSchema.GSoC2024.CorvusQualification/JsonSchema.GSoC2024.ExistingLibrary/bin/Debug/netstandard2.0/JsonSchema.GSoC2024.ExistingLibrary.dll" target="analyzers/dotnet/cs/JsonSchema.GSoC2024.ExistingLibrary.dll" />
+  </files>
+</package>
