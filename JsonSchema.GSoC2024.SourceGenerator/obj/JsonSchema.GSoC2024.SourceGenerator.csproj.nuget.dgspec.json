@@ -42,6 +42,32 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Corvus.Json.CodeGeneration.201909": {
+              "target": "Package",
+              "version": "[3.0.27, )"
+            },
+            "Corvus.Json.CodeGeneration.202012": {
+              "target": "Package",
+              "version": "[3.0.27, )"
+            },
+            "Corvus.Json.CodeGeneration.4": {
+              "target": "Package",
+              "version": "[3.0.27, )"
+            },
+            "Corvus.Json.CodeGeneration.6": {
+              "target": "Package",
+              "version": "[3.0.27, )"
+            },
+            "Corvus.Json.CodeGeneration.7": {
+              "target": "Package",
+              "version": "[3.0.27, )"
+            },
+            "Corvus.Json.CodeGeneration.OpenApi30": {
+              "target": "Package",
+              "version": "[3.0.27, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
