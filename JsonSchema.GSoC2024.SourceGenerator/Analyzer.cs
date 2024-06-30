@@ -6,7 +6,8 @@ using System.Text.Json;
 using Microsoft.CodeAnalysis.CSharp;
 using Spectre.Console.Cli;
 using Microsoft.CodeAnalysis;
-
+using Microsoft.CodeAnalysis.Text;
+using System.Text;
 
 namespace Corvus.Json.SchemaGenerator
 {
@@ -46,15 +47,7 @@ namespace Corvus.Json.SchemaGenerator
                 }
                 catch (Exception ex)
                 {
-                    context.ReportDiagnostic(Diagnostic.Create(
-                        new DiagnosticDescriptor(
-                            "JSSG001",
-                            "JSON Schema Generation Error",
-                            $"Error generating code for schema {schemaFile.Path}: {ex.Message}",
-                            "JsonSchemaSourceGenerator",
-                            DiagnosticSeverity.Error,
-                            isEnabledByDefault: true),
-                        Location.None));
+                           // $"Error generating code for schema {schemaFile.Path}: {ex.Message}",
                 }
             }
         }
@@ -85,13 +78,8 @@ namespace Corvus.Json.SchemaGenerator
                     }
                     catch (Exception ex)
                     {
-                        context.ReportDiagnostic(Diagnostic.Create(
-                            new DiagnosticDescriptor(
-                                $"Unable to generate code for type {generatedType.Value.DotnetTypeName} from location {generatedType.Key}: {ex.Message}",
-                                "JsonSchemaSourceGenerator",
-                                DiagnosticSeverity.Error,
-                                isEnabledByDefault: true),
-                            Location.None));
+                            //    $"Unable to generate code for type {generatedType.Value.DotnetTypeName} from location {generatedType.Key}: {ex.Message}",
+
                     }
                 }
             }
