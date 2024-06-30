@@ -22,14 +22,12 @@ namespace Corvus.Json.SchemaGenerator
                 (spc, source) => Execute(source.Item1, source.Item2, spc));
         }
 
-        private void Execute(Compilation compilation, ImmutableArray<AdditionalText> schemaFiles, SourceProductionContext context)
+         private void Execute(Compilation compilation, ImmutableArray<AdditionalText> schemaFiles, SourceProductionContext context)
         {
             if (schemaFiles.IsDefaultOrEmpty)
             {
                 return;
             }
-
-            var typeBuilder = new JsonSchemaTypeBuilder(new CompoundDocumentResolver(new FileSystemDocumentResolver(), new HttpClientDocumentResolver(new HttpClient())));
 
             foreach (AdditionalText schemaFile in schemaFiles)
             {
@@ -41,20 +39,7 @@ namespace Corvus.Json.SchemaGenerator
 
                 try
                 {
-                    JsonReference reference = new(schemaFile.Path, string.Empty);
-                    SchemaVariant sv = GetSchemaVariant(typeBuilder, reference);
-
-                    IJsonSchemaBuilder builder = GetJsonSchemaBuilder(sv, typeBuilder);
-
-                    var (RootType, GeneratedTypes) = builder.BuildTypesFor(reference, compilation.AssemblyName, false).Result;
-
-                    foreach (var generatedType in GeneratedTypes)
-                    {
-                        foreach (var typeAndCode in generatedType.Value.Code)
-                        {
-                            context.AddSource($"{typeAndCode.Filename}", SourceText.From(typeAndCode.Code, Encoding.UTF8));
-                        }
-                    }
+                    GenerateTypes(schemaFile.Path, compilation.AssemblyName, null, false, null, null, null, SchemaVariant.NotSpecified, true, context);
                 }
                 catch (Exception ex)
                 {
@@ -67,6 +52,44 @@ namespace Corvus.Json.SchemaGenerator
                             DiagnosticSeverity.Error,
                             isEnabledByDefault: true),
                         Location.None));
+                }
+            }
+        }
+
+        private void GenerateTypes(string schemaFile, string rootNamespace, string? rootPath, bool rebaseToRootPath, string? outputPath, string? outputMapFile, string? rootTypeName, SchemaVariant schemaVariant, bool assertFormat, SourceProductionContext context)
+        {
+            var typeBuilder = new JsonSchemaTypeBuilder(new CompoundDocumentResolver(new FileSystemDocumentResolver(), new HttpClientDocumentResolver(new HttpClient())));
+            JsonReference reference = new(schemaFile, rootPath ?? string.Empty);
+            SchemaVariant sv = ValidationSemanticsToSchemaVariant(typeBuilder.GetValidationSemantics(reference, rebaseToRootPath).Result);
+
+            if (sv == SchemaVariant.NotSpecified)
+            {
+                sv = schemaVariant;
+            }
+
+            IJsonSchemaBuilder builder = GetJsonSchemaBuilder(sv, typeBuilder);
+
+            (string RootType, ImmutableDictionary<JsonReference, TypeAndCode> GeneratedTypes) = builder.BuildTypesFor(reference, rootNamespace, rebaseToRootPath, rootTypeName: rootTypeName, validateFormat: assertFormat).Result;
+
+            foreach (KeyValuePair<JsonReference, TypeAndCode> generatedType in GeneratedTypes)
+            {
+                foreach (CodeAndFilename typeAndCode in generatedType.Value.Code)
+                {
+                    try
+                    {
+                        string source = typeAndCode.Code;
+                        context.AddSource($"{typeAndCode.Filename}", SourceText.From(source, Encoding.UTF8));
+                    }
+                    catch (Exception ex)
+                    {
+                        context.ReportDiagnostic(Diagnostic.Create(
+                            new DiagnosticDescriptor(
+                                $"Unable to generate code for type {generatedType.Value.DotnetTypeName} from location {generatedType.Key}: {ex.Message}",
+                                "JsonSchemaSourceGenerator",
+                                DiagnosticSeverity.Error,
+                                isEnabledByDefault: true),
+                            Location.None));
+                    }
                 }
             }
         }

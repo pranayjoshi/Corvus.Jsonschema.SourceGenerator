@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4gIOWkirpUwA57ZUn44F0GvrZiJddxSD/CmOnh2n09oxPfjV4CXj9J965TNSYiu73HExZpEXmMI6+o5ATf/e0w==",
+  "dgSpecHash": "WJ115vL3NNmiXEqE0IlAdvmvvlz3uw11xOxdjXXdqpPV6qqSvBrIkWdnD6y+UKpZIXQepbdF0MH+DdWctnzeWA==",
   "success": true,
-  "projectFilePath": "/Users/pranayjoshi/Desktop/projects/CSharp/JsonSchema_Analyzer_qualification_task/JsonSchema.GSoC2024.PartialAttribute/JsonSchema.GSoC2024.PartialAttribute.csproj",
+  "projectFilePath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.PartialAttribute/JsonSchema.GSoC2024.PartialAttribute.csproj",
   "expectedPackageFiles": [
     "/Users/pranayjoshi/.nuget/packages/communitytoolkit.highperformance/8.2.2/communitytoolkit.highperformance.8.2.2.nupkg.sha512",
     "/Users/pranayjoshi/.nuget/packages/corvus.json.codegeneration.6/3.0.27/corvus.json.codegeneration.6.3.0.27.nupkg.sha512",
