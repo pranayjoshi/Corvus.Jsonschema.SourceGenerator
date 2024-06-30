@@ -66,6 +66,10 @@
             "Corvus.Json.CodeGeneration.OpenApi30": {
               "target": "Package",
               "version": "[3.0.27, )"
+            },
+            "Spectre.Console.Cli": {
+              "target": "Package",
+              "version": "[0.49.1, )"
             }
           },
           "imports": [

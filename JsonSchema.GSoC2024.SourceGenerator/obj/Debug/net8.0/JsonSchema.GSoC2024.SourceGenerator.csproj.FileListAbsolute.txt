@@ -1,0 +1,6 @@
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.SourceGenerator/obj/Debug/net8.0/JsonSchema.GSoC2024.SourceGenerator.csproj.AssemblyReference.cache
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.SourceGenerator/obj/Debug/net8.0/JsonSchema.GSoC2024.SourceGenerator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.SourceGenerator/obj/Debug/net8.0/JsonSchema.GSoC2024.SourceGenerator.AssemblyInfoInputs.cache
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.SourceGenerator/obj/Debug/net8.0/JsonSchema.GSoC2024.SourceGenerator.AssemblyInfo.cs
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.SourceGenerator/obj/Debug/net8.0/JsonSchema.GSoC2024.SourceGenerator.csproj.CoreCompileInputs.cache
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.SourceGenerator/obj/Debug/net8.0/JsonSchema.GSoC2024.SourceGenerator.sourcelink.json

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "T0n4+xQNBQN+7ne2cu6CBQnGWXbBr/p6Wu0cvPrKXbuF5VzbUW9iEEB/IITPkh2fYKxFOrteh6wRfw11G10rng==",
+  "dgSpecHash": "J2Au1GyVRLxsI5Kafncf7ZZGVmF9cAkMXB7BmHxmDqrPKY8nOMcI8m4fp0RNV4G8K7dXJR+KIcdjHdCWKcLYsA==",
   "success": true,
   "projectFilePath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.SourceGenerator/JsonSchema.GSoC2024.SourceGenerator.csproj",
   "expectedPackageFiles": [
@@ -38,6 +38,8 @@
     "/Users/pranayjoshi/.nuget/packages/microsoft.extensions.options.configurationextensions/8.0.0/microsoft.extensions.options.configurationextensions.8.0.0.nupkg.sha512",
     "/Users/pranayjoshi/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "/Users/pranayjoshi/.nuget/packages/nodatime/3.1.11/nodatime.3.1.11.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/spectre.console/0.49.1/spectre.console.0.49.1.nupkg.sha512",
+    "/Users/pranayjoshi/.nuget/packages/spectre.console.cli/0.49.1/spectre.console.cli.0.49.1.nupkg.sha512",
     "/Users/pranayjoshi/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
     "/Users/pranayjoshi/.nuget/packages/system.codedom/8.0.0/system.codedom.8.0.0.nupkg.sha512",
     "/Users/pranayjoshi/.nuget/packages/system.collections.immutable/8.0.0/system.collections.immutable.8.0.0.nupkg.sha512",

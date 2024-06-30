@@ -14,6 +14,7 @@
     <PackageReference Include="Corvus.Json.CodeGeneration.6" Version="3.0.27" />
     <PackageReference Include="Corvus.Json.CodeGeneration.7" Version="3.0.27" />
     <PackageReference Include="Corvus.Json.CodeGeneration.OpenApi30" Version="3.0.27" />
+    <PackageReference Include="Spectre.Console.Cli" Version="0.49.1" />
   </ItemGroup>
 
 </Project>

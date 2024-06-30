@@ -11,6 +11,9 @@
     <PropertyGroup>
       <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
     </PropertyGroup>
+    <ItemGroup>
+      <ProjectReference Include="../JsonSchema.GSoC2024.SourceGenerator/JsonSchema.GSoC2024.SourceGenerator.csproj" OutputItemType="Analyzer" />
+  </ItemGroup>
   </ItemGroup>
 
 

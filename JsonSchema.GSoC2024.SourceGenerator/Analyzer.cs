@@ -1,9 +1,12 @@
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.Text;
 using System.Collections.Immutable;
-using System.Text;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using Corvus.Json.CodeGeneration;
 using System.Text.Json;
+using Microsoft.CodeAnalysis.CSharp;
+using Spectre.Console.Cli;
+using Microsoft.CodeAnalysis;
+
 
 namespace Corvus.Json.SchemaGenerator
 {
