@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/pranayjoshi/Desktop/projects/CSharp/JsonSchema_Analyzer_qualification_task/JsonSchema.GSoC2024.AssemblyAttribute/JsonSchema.GSoC2024.AssemblyAttribute.csproj": {}
+    "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.AssemblyAttribute/JsonSchema.GSoC2024.AssemblyAttribute.csproj": {}
   },
   "projects": {
-    "/Users/pranayjoshi/Desktop/projects/CSharp/JsonSchema_Analyzer_qualification_task/JsonSchema.GSoC2024.AssemblyAttribute/JsonSchema.GSoC2024.AssemblyAttribute.csproj": {
+    "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.AssemblyAttribute/JsonSchema.GSoC2024.AssemblyAttribute.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pranayjoshi/Desktop/projects/CSharp/JsonSchema_Analyzer_qualification_task/JsonSchema.GSoC2024.AssemblyAttribute/JsonSchema.GSoC2024.AssemblyAttribute.csproj",
+        "projectUniqueName": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.AssemblyAttribute/JsonSchema.GSoC2024.AssemblyAttribute.csproj",
         "projectName": "JsonSchema.GSoC2024.AssemblyAttribute",
-        "projectPath": "/Users/pranayjoshi/Desktop/projects/CSharp/JsonSchema_Analyzer_qualification_task/JsonSchema.GSoC2024.AssemblyAttribute/JsonSchema.GSoC2024.AssemblyAttribute.csproj",
+        "projectPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.AssemblyAttribute/JsonSchema.GSoC2024.AssemblyAttribute.csproj",
         "packagesPath": "/Users/pranayjoshi/.nuget/packages/",
-        "outputPath": "/Users/pranayjoshi/Desktop/projects/CSharp/JsonSchema_Analyzer_qualification_task/JsonSchema.GSoC2024.AssemblyAttribute/obj/",
+        "outputPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.AssemblyAttribute/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/pranayjoshi/.nuget/NuGet/NuGet.Config"

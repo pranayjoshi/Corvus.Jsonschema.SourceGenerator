@@ -4,14 +4,14 @@
     "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.PartialAttribute/JsonSchema.GSoC2024.PartialAttribute.csproj": {}
   },
   "projects": {
-    "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibrary/JsonSchema.GSoC2024.ExistingLibrary.csproj": {
+    "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibrary/JsonSchema.GSoC2024.ExistingLibrary.csproj",
-        "projectName": "JsonSchema.GSoC2024.ExistingLibrary",
-        "projectPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibrary/JsonSchema.GSoC2024.ExistingLibrary.csproj",
+        "projectUniqueName": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj",
+        "projectName": "JsonSchema.GSoC2024.ExistingLibraryPartial",
+        "projectPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj",
         "packagesPath": "/Users/pranayjoshi/.nuget/packages/",
-        "outputPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibrary/obj/",
+        "outputPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/obj/",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "configFilePaths": [
@@ -106,8 +106,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibrary/JsonSchema.GSoC2024.ExistingLibrary.csproj": {
-                "projectPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibrary/JsonSchema.GSoC2024.ExistingLibrary.csproj"
+              "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj": {
+                "projectPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj"
               }
             }
           }

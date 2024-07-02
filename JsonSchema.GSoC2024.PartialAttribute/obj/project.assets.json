@@ -604,7 +604,7 @@
           "buildTransitive/netcoreapp3.1/_._": {}
         }
       },
-      "JsonSchema.GSoC2024.ExistingLibrary/1.0.0": {
+      "JsonSchema.GSoC2024.ExistingLibraryPartial/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
@@ -612,10 +612,10 @@
           "Microsoft.CodeAnalysis.Common": "4.9.2"
         },
         "compile": {
-          "bin/placeholder/JsonSchema.GSoC2024.ExistingLibrary.dll": {}
+          "bin/placeholder/JsonSchema.GSoC2024.ExistingLibraryPartial.dll": {}
         },
         "runtime": {
-          "bin/placeholder/JsonSchema.GSoC2024.ExistingLibrary.dll": {}
+          "bin/placeholder/JsonSchema.GSoC2024.ExistingLibraryPartial.dll": {}
         }
       }
     }
@@ -1522,15 +1522,15 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "JsonSchema.GSoC2024.ExistingLibrary/1.0.0": {
+    "JsonSchema.GSoC2024.ExistingLibraryPartial/1.0.0": {
       "type": "project",
-      "path": "../JsonSchema.GSoC2024.ExistingLibrary/JsonSchema.GSoC2024.ExistingLibrary.csproj",
-      "msbuildProject": "../JsonSchema.GSoC2024.ExistingLibrary/JsonSchema.GSoC2024.ExistingLibrary.csproj"
+      "path": "../JsonSchema.GSoC2024.ExistingLibraryPartial/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj",
+      "msbuildProject": "../JsonSchema.GSoC2024.ExistingLibraryPartial/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "JsonSchema.GSoC2024.ExistingLibrary >= 1.0.0"
+      "JsonSchema.GSoC2024.ExistingLibraryPartial >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -1558,8 +1558,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibrary/JsonSchema.GSoC2024.ExistingLibrary.csproj": {
-              "projectPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibrary/JsonSchema.GSoC2024.ExistingLibrary.csproj"
+            "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj": {
+              "projectPath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj"
             }
           }
         }

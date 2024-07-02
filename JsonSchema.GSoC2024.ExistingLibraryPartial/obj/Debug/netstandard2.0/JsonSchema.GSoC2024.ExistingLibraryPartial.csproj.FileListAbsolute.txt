@@ -1,0 +1,11 @@
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/bin/Debug/netstandard2.0/JsonSchema.GSoC2024.ExistingLibraryPartial.deps.json
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/bin/Debug/netstandard2.0/JsonSchema.GSoC2024.ExistingLibraryPartial.dll
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/bin/Debug/netstandard2.0/JsonSchema.GSoC2024.ExistingLibraryPartial.pdb
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/obj/Debug/netstandard2.0/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj.AssemblyReference.cache
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/obj/Debug/netstandard2.0/JsonSchema.GSoC2024.ExistingLibraryPartial.GeneratedMSBuildEditorConfig.editorconfig
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/obj/Debug/netstandard2.0/JsonSchema.GSoC2024.ExistingLibraryPartial.AssemblyInfoInputs.cache
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/obj/Debug/netstandard2.0/JsonSchema.GSoC2024.ExistingLibraryPartial.AssemblyInfo.cs
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/obj/Debug/netstandard2.0/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj.CoreCompileInputs.cache
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/obj/Debug/netstandard2.0/JsonSchema.GSoC2024.ExistingLibraryPartial.sourcelink.json
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/obj/Debug/netstandard2.0/JsonSchema.GSoC2024.ExistingLibraryPartial.dll
+/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.ExistingLibraryPartial/obj/Debug/netstandard2.0/JsonSchema.GSoC2024.ExistingLibraryPartial.pdb

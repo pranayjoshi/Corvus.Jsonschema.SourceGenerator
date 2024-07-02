@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WJ115vL3NNmiXEqE0IlAdvmvvlz3uw11xOxdjXXdqpPV6qqSvBrIkWdnD6y+UKpZIXQepbdF0MH+DdWctnzeWA==",
+  "dgSpecHash": "hplYf/U09U0NXPQpkAVsVOBMhW6pmoHKMRqBr8MQqBpU4mWLzwbW+KEWl3vzyeLz8M4vRfIf+VYv0sYk1uM+gA==",
   "success": true,
   "projectFilePath": "/Users/pranayjoshi/Desktop/projects/CSharp/Corvus.Jsonschema.SourceGenerator/JsonSchema.GSoC2024.PartialAttribute/JsonSchema.GSoC2024.PartialAttribute.csproj",
   "expectedPackageFiles": [
@@ -32,8 +32,7 @@
     "/Users/pranayjoshi/.nuget/packages/system.collections.immutable/8.0.0/system.collections.immutable.8.0.0.nupkg.sha512",
     "/Users/pranayjoshi/.nuget/packages/system.diagnostics.diagnosticsource/8.0.0/system.diagnostics.diagnosticsource.8.0.0.nupkg.sha512",
     "/Users/pranayjoshi/.nuget/packages/system.reflection.metadata/8.0.0/system.reflection.metadata.8.0.0.nupkg.sha512",
-    "/Users/pranayjoshi/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "/Users/pranayjoshi/.nuget/packages/jsonschema.gsoc2024.existinglibrary/1.0.0/jsonschema.gsoc2024.existinglibrary.1.0.0.nupkg.sha512"
+    "/Users/pranayjoshi/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

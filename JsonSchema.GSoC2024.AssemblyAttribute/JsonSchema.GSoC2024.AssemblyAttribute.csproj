@@ -7,7 +7,7 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="../JsonSchema.GSoC2024.ExistingLibrary/JsonSchema.GSoC2024.ExistingLibrary.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    <ProjectReference Include="../JsonSchema.GSoC2024.ExistingLibraryAssembly/JsonSchema.GSoC2024.ExistingLibraryAssembly.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
 </ItemGroup>
 
 </Project>
