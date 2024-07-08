@@ -44,8 +44,8 @@ namespace JsonSchema.GSoC2024.PartialAttribute
                         if (fullName == "GeneratedAttribute")
                         {
                             var jsonPath = attribute.ArgumentList?.Arguments[0].Expression.ToString().Trim('"');
-                            var qualification = attribute.ArgumentList?.Arguments[1].Expression.ToString().Trim('"');
-                            return (classDeclarationSyntax, jsonPath ?? "", qualification ?? "");
+                            var class_name = attribute.ArgumentList?.Arguments[1].Expression.ToString().Trim('"');
+                            return (classDeclarationSyntax, jsonPath ?? "", class_name ?? "");
                         }
                     }
                 }
@@ -53,9 +53,9 @@ namespace JsonSchema.GSoC2024.PartialAttribute
             return (null, "", "");
         }
 
-        private static void Execute(ClassDeclarationSyntax classDeclaration, string jsonPath, string qualification, SourceProductionContext context)
+        private static void Execute(ClassDeclarationSyntax classDeclaration, string jsonPath, string class_name, SourceProductionContext context)
         {
-            string classContent = GeneratePartialClassContent(classDeclaration, jsonPath, qualification);
+            string classContent = GeneratePartialClassContent(classDeclaration, jsonPath, class_name);
             context.AddSource($"{classDeclaration.Identifier}.Generated.cs", SourceText.From(classContent, Encoding.UTF8));
         }
 
@@ -68,24 +68,24 @@ namespace JsonSchema.GSoC2024.PartialAttribute
             public sealed class GeneratedAttribute : Attribute
             {
                 public string JsonPath { get; }
-                public string Qualification { get; }
+                public string class_name { get; }
 
-                public GeneratedAttribute(string jsonPath, string qualification)
+                public GeneratedAttribute(string jsonPath, string class_name)
                 {
                     JsonPath = jsonPath;
-                    Qualification = qualification;
+                    class_name = class_name;
                 }
 
                 public void PrintDetails()
                 {
                     Console.WriteLine($"JSON Path: {JsonPath}");
-                    Console.WriteLine($"Qualification: {Qualification}");
+                    Console.WriteLine($"class_name: {class_name}");
                 }
             }
             """;
         }
 
-        private static string GeneratePartialClassContent(ClassDeclarationSyntax classDeclaration, string jsonPath, string qualification)
+        private static string GeneratePartialClassContent(ClassDeclarationSyntax classDeclaration, string jsonPath, string class_name)
         {
             string className = classDeclaration.Identifier.ToString();
             return $$"""
@@ -98,14 +98,14 @@ namespace JsonSchema.GSoC2024.PartialAttribute
                 public void ReadAndPrintJson()
                 {
                     string jsonPath = @"{{jsonPath}}";
-                    string qualification = "{{qualification}}";
+                    string class_name = "{{class_name}}";
 
                     if (File.Exists(jsonPath))
                     {
                         string jsonContent = File.ReadAllText(jsonPath);
                         var jsonDocument = JsonDocument.Parse(jsonContent);
                         
-                        Console.WriteLine($"JSON content for {qualification}:");
+                        Console.WriteLine($"JSON content for {class_name}:");
                         Console.WriteLine(JsonSerializer.Serialize(jsonDocument, new JsonSerializerOptions { WriteIndented = true }));
                     }
                     else
