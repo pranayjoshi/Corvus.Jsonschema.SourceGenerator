@@ -1,9 +1,15 @@
-﻿class Program
+﻿using System;
+
+class Program
 {
     static void Main(string[] args)
     {
-        var testClass = new TestClass();
-        testClass.TestMethod();
-        testClass.GeneratedMethod();
+        var printInstance = new PrintClass();
+        printInstance.ReadAndPrintJson();
     }
+}
+
+[Generated("person.json", "SampleData")]
+public partial class PrintClass
+{
 }

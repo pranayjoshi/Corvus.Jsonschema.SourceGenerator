@@ -10,5 +10,8 @@
   <ItemGroup>
     <ProjectReference Include="../JsonSchema.GSoC2024.ExistingLibraryPartial/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj" OutputItemType="Analyzer" />
 </ItemGroup>
+<ItemGroup>
+  <AdditionalFiles Include="**\*.json" />
+</ItemGroup>
 
 </Project>
