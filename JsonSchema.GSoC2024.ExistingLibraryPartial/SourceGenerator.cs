@@ -5,6 +5,7 @@ using Microsoft.CodeAnalysis.Text;
 using System.Text;
 using System.IO;
 using System.Text.Json;
+using System.Linq;
 
 namespace JsonSchema.GSoC2024.PartialAttribute
 {
@@ -44,8 +45,8 @@ namespace JsonSchema.GSoC2024.PartialAttribute
                         if (fullName == "GeneratedAttribute")
                         {
                             var jsonPath = attribute.ArgumentList?.Arguments[0].Expression.ToString().Trim('"');
-                            var class_name = attribute.ArgumentList?.Arguments[1].Expression.ToString().Trim('"');
-                            return (classDeclarationSyntax, jsonPath ?? "", class_name ?? "");
+                            var namespaceName = GetNamespace(classDeclarationSyntax);
+                            return (classDeclarationSyntax, jsonPath ?? "", namespaceName);
                         }
                     }
                 }
@@ -53,9 +54,15 @@ namespace JsonSchema.GSoC2024.PartialAttribute
             return (null, "", "");
         }
 
-        private static void Execute(ClassDeclarationSyntax classDeclaration, string jsonPath, string class_name, SourceProductionContext context)
+        private static string GetNamespace(ClassDeclarationSyntax classDeclaration)
         {
-            string classContent = GeneratePartialClassContent(classDeclaration, jsonPath, class_name);
+            var namespaceDeclaration = classDeclaration.Ancestors().OfType<NamespaceDeclarationSyntax>().FirstOrDefault();
+            return namespaceDeclaration?.Name.ToString() ?? "";
+        }
+
+        private static void Execute(ClassDeclarationSyntax classDeclaration, string jsonPath, string namespaceName, SourceProductionContext context)
+        {
+            string classContent = GeneratePartialClassContent(classDeclaration, jsonPath, namespaceName);
             context.AddSource($"{classDeclaration.Identifier}.Generated.cs", SourceText.From(classContent, Encoding.UTF8));
         }
 
@@ -68,44 +75,44 @@ namespace JsonSchema.GSoC2024.PartialAttribute
             public sealed class GeneratedAttribute : Attribute
             {
                 public string JsonPath { get; }
-                public string class_name { get; }
 
-                public GeneratedAttribute(string jsonPath, string class_name)
+                public GeneratedAttribute(string jsonPath)
                 {
                     JsonPath = jsonPath;
-                    class_name = class_name;
                 }
 
                 public void PrintDetails()
                 {
                     Console.WriteLine($"JSON Path: {JsonPath}");
-                    Console.WriteLine($"class_name: {class_name}");
                 }
             }
             """;
         }
 
-        private static string GeneratePartialClassContent(ClassDeclarationSyntax classDeclaration, string jsonPath, string class_name)
+        private static string GeneratePartialClassContent(ClassDeclarationSyntax classDeclaration, string jsonPath, string namespaceName)
         {
             string className = classDeclaration.Identifier.ToString();
+            string namespaceDeclaration = string.IsNullOrEmpty(namespaceName) ? "" : $"namespace {namespaceName}\n{{";
+            string namespaceClosing = string.IsNullOrEmpty(namespaceName) ? "" : "}";
+
             return $$"""
             using System;
             using System.IO;
             using System.Text.Json;
 
+            {{namespaceDeclaration}}
             public partial class {{className}}
             {
                 public void ReadAndPrintJson()
                 {
                     string jsonPath = @"{{jsonPath}}";
-                    string class_name = "{{class_name}}";
 
                     if (File.Exists(jsonPath))
                     {
                         string jsonContent = File.ReadAllText(jsonPath);
                         var jsonDocument = JsonDocument.Parse(jsonContent);
                         
-                        Console.WriteLine($"JSON content for {class_name}:");
+                        Console.WriteLine($"JSON content for {nameof({{className}})}:");
                         Console.WriteLine(JsonSerializer.Serialize(jsonDocument, new JsonSerializerOptions { WriteIndented = true }));
                     }
                     else
@@ -114,6 +121,7 @@ namespace JsonSchema.GSoC2024.PartialAttribute
                     }
                 }
             }
+            {{namespaceClosing}}
             """;
         }
     }

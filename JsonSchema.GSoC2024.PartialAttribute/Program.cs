@@ -9,7 +9,7 @@ class Program
     }
 }
 
-[Generated("person.json", "SampleData")]
+[Generated("person.json")]
 public partial class PrintClass
 {
 }
