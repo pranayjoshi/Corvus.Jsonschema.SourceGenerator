@@ -1,7 +1,5 @@
-
 {
-    "Name": "Pranay Joshi",
+    "Name": "John Doe",
     "Age": 30,
-    "IsActive": true,
-    "Scores": [85, 90, 95]
-}
+    "City": "New York"
+  }

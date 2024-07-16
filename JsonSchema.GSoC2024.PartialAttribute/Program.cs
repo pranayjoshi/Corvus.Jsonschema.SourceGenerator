@@ -1,15 +1,15 @@
-﻿using System;
+﻿[Generated("person.json")]
+public partial class Person
+{
+}
 
 class Program
 {
     static void Main(string[] args)
     {
-        var printInstance = new PrintClass();
-        printInstance.ReadAndPrintJson();
+        var person = Person.FromJson();
+        // person.PrintJsonContent();
+        // Console.WriteLine($"Name: {person.Name}");
     }
 }
 
-[Generated("person.json")]
-public partial class PrintClass
-{
-}

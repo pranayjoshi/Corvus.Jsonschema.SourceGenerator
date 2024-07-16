@@ -6,12 +6,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
+
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../JsonSchema.GSoC2024.ExistingLibraryPartial/JsonSchema.GSoC2024.ExistingLibraryPartial.csproj" OutputItemType="Analyzer" />
-</ItemGroup>
+  </ItemGroup>
 <ItemGroup>
-  <AdditionalFiles Include="**\*.json" />
+  <AdditionalFiles Include="./person.json" />
 </ItemGroup>
 
 </Project>
