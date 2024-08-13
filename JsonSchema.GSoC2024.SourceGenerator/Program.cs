@@ -5,9 +5,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
-using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.Linq;
 using System.Text;
 using System.Text.Json;
 
@@ -84,7 +82,7 @@ namespace JsonSchema.GSoC2024.PartialAttribute
                     }
                 }
             }
-            return (null, "", "");
+            return (classDeclarationSyntax, "", "");
         }
 
         private static string GetNamespace(ClassDeclarationSyntax classDeclaration)
@@ -93,12 +91,13 @@ namespace JsonSchema.GSoC2024.PartialAttribute
             return namespaceDeclaration?.Name.ToString() ?? "";
         }
 
-        private static void Execute(
+         private static void Execute(
     (ClassDeclarationSyntax ClassDeclaration, string JsonPath, string Namespace) item,
     ImmutableArray<AdditionalText> additionalFiles,
     SourceProductionContext context)
 {
     var (classDeclaration, jsonPath, namespaceName) = item;
+    
     var className = classDeclaration.Identifier.ToString();
 
     context.ReportDiagnostic(Diagnostic.Create(AttributeApplied, classDeclaration.GetLocation(), className, jsonPath));
@@ -126,14 +125,16 @@ namespace JsonSchema.GSoC2024.PartialAttribute
 
                 try
                 {
-                    generator.GenerateTypes(schemaFile.Path, namespaceName, null, false, null, null, null, SchemaVariant.NotSpecified, true, context);
+                    generator.GenerateTypes(schemaFile.Path, schemaContent, namespaceName, null, false, null, null, null, SchemaVariant.NotSpecified, true, context);
                     context.ReportDiagnostic(Diagnostic.Create(
         new DiagnosticDescriptor("JSON004", "Raw JSON Content", "Raw JSON Content: {0}", "Debug", DiagnosticSeverity.Info, true),
         classDeclaration.GetLocation(), schemaContent));
                 }
                 catch (Exception ex)
                 {
-                           // $"Error generating code for schema {schemaFile.Path}: {ex.Message}",
+                    context.ReportDiagnostic(Diagnostic.Create(
+        new DiagnosticDescriptor("JSON006", jsonPath, "Error in reading file", "Debug", DiagnosticSeverity.Warning, true),
+        classDeclaration.GetLocation(), jsonPath));
                 }
             }
     
@@ -160,9 +161,35 @@ namespace JsonSchema.GSoC2024.PartialAttribute
             """;
         }
 
-        private void GenerateTypes(string schemaFile, string rootNamespace, string? rootPath, bool rebaseToRootPath, string? outputPath, string? outputMapFile, string? rootTypeName, SchemaVariant schemaVariant, bool assertFormat, SourceProductionContext context)
+        private void GenerateTypes(string schemaFile, string schemaContent, string rootNamespace, string? rootPath, bool rebaseToRootPath, string? outputPath, string? outputMapFile, string? rootTypeName, SchemaVariant schemaVariant, bool assertFormat, SourceProductionContext context)
         {
-            var typeBuilder = new JsonSchemaTypeBuilder(new CompoundDocumentResolver(new FileSystemDocumentResolver(), new HttpClientDocumentResolver(new HttpClient())));
+            context.ReportDiagnostic(Diagnostic.Create(
+        new DiagnosticDescriptor("JSON008",  "wdawdadad", "Error in reading file", "Debug", DiagnosticSeverity.Warning, true),
+        null, schemaFile));
+            var fileSystemResolver = new FileSystemDocumentResolver();
+            var httpClientResolver = new HttpClientDocumentResolver(new HttpClient());
+
+            var compoundResolver = new CompoundDocumentResolver(fileSystemResolver, httpClientResolver);
+            
+            JsonDocument doc = JsonDocument.Parse(schemaContent);
+            bool added = fileSystemResolver.AddDocument(schemaFile, doc);
+
+            if (added)
+            {
+                context.ReportDiagnostic(Diagnostic.Create(
+        new DiagnosticDescriptor("JSON008",  "wdawdadad", "Error in reading file", "Debug", DiagnosticSeverity.Warning, true),
+        null, schemaFile));
+                
+            }
+            else
+            {
+                context.ReportDiagnostic(Diagnostic.Create(
+        new DiagnosticDescriptor("JSON009", "wdadadad", "Error in reading file", "Debug", DiagnosticSeverity.Warning, true),
+        null, schemaFile));
+                
+            }
+            
+            var typeBuilder = new JsonSchemaTypeBuilder(compoundResolver);
             JsonReference reference = new(schemaFile, rootPath ?? string.Empty);
             SchemaVariant sv = ValidationSemanticsToSchemaVariant(typeBuilder.GetValidationSemantics(reference, rebaseToRootPath).Result);
 
@@ -182,12 +209,18 @@ namespace JsonSchema.GSoC2024.PartialAttribute
                     try
                     {
                         string source = typeAndCode.Code;
-                        context.AddSource($"{typeAndCode.Filename}", SourceText.From(source, Encoding.UTF8));
+                        using (JsonDocument jsonDocument = JsonDocument.Parse($"{{\"filename\": \"{typeAndCode.Filename}\", \"sourceLength\": {source.Length}}}"))
+                        {
+                            string uri = typeAndCode.Filename;
+                        }
+                context.AddSource($"{typeAndCode.Filename}", SourceText.From(source, Encoding.UTF8));
+            
                     }
                     catch (Exception ex)
                     {
-                            //    $"Unable to generate code for type {generatedType.Value.DotnetTypeName} from location {generatedType.Key}: {ex.Message}",
-
+                        context.ReportDiagnostic(Diagnostic.Create(
+        new DiagnosticDescriptor("JSON010", "wdadadad", "Error in reading file", "Debug", DiagnosticSeverity.Warning, true),
+        null, schemaFile));
                     }
                 }
             }

@@ -5,6 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Version>1.0.0</Version>
     <Authors>Pranay Joshi</Authors>
+    <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
