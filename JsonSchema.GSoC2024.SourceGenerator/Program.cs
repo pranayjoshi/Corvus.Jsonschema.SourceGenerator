@@ -37,26 +37,41 @@ namespace JsonSchema.GSoC2024.PartialAttribute
             category: "Usage",
             DiagnosticSeverity.Warning,
             isEnabledByDefault: true);
-
         public void Initialize(IncrementalGeneratorInitializationContext context)
         {
             context.RegisterPostInitializationOutput(ctx => ctx.AddSource(
-                "GeneratedAttribute.cs", SourceText.From(GenerateAttributeCode(), Encoding.UTF8)));
+                        "GeneratedAttribute.cs", SourceText.From(GenerateAttributeCode(), Encoding.UTF8)));
 
-            IncrementalValuesProvider<(ClassDeclarationSyntax ClassDeclaration, string JsonPath, string Namespace)> classDeclarations = 
+            IncrementalValuesProvider<(ClassDeclarationSyntax ClassDeclaration, string JsonPath, string Namespace)> classDeclarations =
                 context.SyntaxProvider
                     .CreateSyntaxProvider(
                         predicate: static (s, _) => IsSyntaxTargetForGeneration(s),
                         transform: static (ctx, _) => GetSemanticTargetForGeneration(ctx))
                     .Where(static m => m.ClassDeclaration is not null);
+            IncrementalValueProvider<(Compilation Compilation, ImmutableArray<AdditionalText> AdditionalFiles, CompoundDocumentResolver Resolver)> compilationFilesAndResolver
+                = context.CompilationProvider
+                    .Combine(context.AdditionalTextsProvider.Collect())
+                    .Select((tuple, cancellationToken) =>
+                    {
+                        var (compilation, additionalFiles) = tuple;
+                        var resolver = new CompoundDocumentResolver();
+                        foreach (var file in additionalFiles)
+                        {
+                            var content = file.GetText(cancellationToken)?.ToString() ?? "";
+                            bool added = resolver.AddDocument(file.Path, JsonDocument.Parse(content));
+                            if (!added)
+                            {
+                                // Log a warning if the document could not be added
+                            }
+                        }
+                        return (compilation, additionalFiles, resolver);
+                    });
 
-            IncrementalValueProvider<(Compilation Compilation, ImmutableArray<AdditionalText> AdditionalFiles)> compilationAndFiles
-                = context.CompilationProvider.Combine(context.AdditionalTextsProvider.Collect());
-
-            context.RegisterSourceOutput(classDeclarations.Combine(compilationAndFiles),
-                static (spc, source) => Execute(source.Left, source.Right.AdditionalFiles, spc));
-            
+            context.RegisterSourceOutput(classDeclarations.Combine(compilationFilesAndResolver),
+                static (spc, source) => Execute(source.Left, source.Right.AdditionalFiles, source.Right.Resolver, spc));
         }
+
+
 
         private static bool IsSyntaxTargetForGeneration(SyntaxNode node)
             => node is ClassDeclarationSyntax { AttributeLists: { Count: > 0 } };
@@ -91,26 +106,27 @@ namespace JsonSchema.GSoC2024.PartialAttribute
             return namespaceDeclaration?.Name.ToString() ?? "";
         }
 
-         private static void Execute(
-    (ClassDeclarationSyntax ClassDeclaration, string JsonPath, string Namespace) item,
-    ImmutableArray<AdditionalText> additionalFiles,
-    SourceProductionContext context)
-{
-    var (classDeclaration, jsonPath, namespaceName) = item;
-    
-    var className = classDeclaration.Identifier.ToString();
+        private static void Execute(
+   (ClassDeclarationSyntax ClassDeclaration, string JsonPath, string Namespace) item,
+   ImmutableArray<AdditionalText> additionalFiles,
+   CompoundDocumentResolver resolver,
+   SourceProductionContext context)
+        {
+            var (classDeclaration, jsonPath, namespaceName) = item;
 
-    context.ReportDiagnostic(Diagnostic.Create(AttributeApplied, classDeclaration.GetLocation(), className, jsonPath));
+            var className = classDeclaration.Identifier.ToString();
 
-    var jsonFile = additionalFiles.FirstOrDefault(f => f.Path.EndsWith(jsonPath));
-    PartialAttributeGenerator generator = new PartialAttributeGenerator();
-    if (jsonFile == null)
-    {
-        context.ReportDiagnostic(Diagnostic.Create(JsonFileNotFound, classDeclaration.GetLocation(), jsonPath, className));
-        return;
-    }
+            context.ReportDiagnostic(Diagnostic.Create(AttributeApplied, classDeclaration.GetLocation(), className, jsonPath));
 
-    if (additionalFiles.IsDefaultOrEmpty)
+            var jsonFile = additionalFiles.FirstOrDefault(f => f.Path.EndsWith(jsonPath));
+            PartialAttributeGenerator generator = new PartialAttributeGenerator();
+            if (jsonFile == null)
+            {
+                context.ReportDiagnostic(Diagnostic.Create(JsonFileNotFound, classDeclaration.GetLocation(), jsonPath, className));
+                return;
+            }
+
+            if (additionalFiles.IsDefaultOrEmpty)
             {
                 return;
             }
@@ -137,11 +153,11 @@ namespace JsonSchema.GSoC2024.PartialAttribute
         classDeclaration.GetLocation(), jsonPath));
                 }
             }
-    
-    // context.AddSource($"{className}.Generated.cs", SourceText.From(classContent, Encoding.UTF8));
 
-    context.ReportDiagnostic(Diagnostic.Create(GenerationComplete, classDeclaration.GetLocation(), className, jsonPath));
-}
+            // context.AddSource($"{className}.Generated.cs", SourceText.From(classContent, Encoding.UTF8));
+
+            context.ReportDiagnostic(Diagnostic.Create(GenerationComplete, classDeclaration.GetLocation(), className, jsonPath));
+        }
 
         private static string GenerateAttributeCode()
         {
@@ -164,31 +180,11 @@ namespace JsonSchema.GSoC2024.PartialAttribute
         private void GenerateTypes(string schemaFile, string schemaContent, string rootNamespace, string? rootPath, bool rebaseToRootPath, string? outputPath, string? outputMapFile, string? rootTypeName, SchemaVariant schemaVariant, bool assertFormat, SourceProductionContext context)
         {
             context.ReportDiagnostic(Diagnostic.Create(
-        new DiagnosticDescriptor("JSON008",  "wdawdadad", "Error in reading file", "Debug", DiagnosticSeverity.Warning, true),
+        new DiagnosticDescriptor("JSON008", "wdawdadad", "Error in reading file", "Debug", DiagnosticSeverity.Warning, true),
         null, schemaFile));
-            var fileSystemResolver = new FileSystemDocumentResolver();
-            var httpClientResolver = new HttpClientDocumentResolver(new HttpClient());
 
-            var compoundResolver = new CompoundDocumentResolver(fileSystemResolver, httpClientResolver);
-            
-            JsonDocument doc = JsonDocument.Parse(schemaContent);
-            bool added = fileSystemResolver.AddDocument(schemaFile, doc);
+            var compoundResolver = new CompoundDocumentResolver();
 
-            if (added)
-            {
-                context.ReportDiagnostic(Diagnostic.Create(
-        new DiagnosticDescriptor("JSON008",  "wdawdadad", "Error in reading file", "Debug", DiagnosticSeverity.Warning, true),
-        null, schemaFile));
-                
-            }
-            else
-            {
-                context.ReportDiagnostic(Diagnostic.Create(
-        new DiagnosticDescriptor("JSON009", "wdadadad", "Error in reading file", "Debug", DiagnosticSeverity.Warning, true),
-        null, schemaFile));
-                
-            }
-            
             var typeBuilder = new JsonSchemaTypeBuilder(compoundResolver);
             JsonReference reference = new(schemaFile, rootPath ?? string.Empty);
             SchemaVariant sv = ValidationSemanticsToSchemaVariant(typeBuilder.GetValidationSemantics(reference, rebaseToRootPath).Result);
@@ -213,8 +209,8 @@ namespace JsonSchema.GSoC2024.PartialAttribute
                         {
                             string uri = typeAndCode.Filename;
                         }
-                context.AddSource($"{typeAndCode.Filename}", SourceText.From(source, Encoding.UTF8));
-            
+                        context.AddSource($"{typeAndCode.Filename}", SourceText.From(source, Encoding.UTF8));
+
                     }
                     catch (Exception ex)
                     {
