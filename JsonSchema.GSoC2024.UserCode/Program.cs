@@ -1,7 +1,6 @@
-﻿
-using System;
+﻿using System;
 
-namespace JsonSchema.GSoC2024.UserCode
+namespace JsonSchema.GSoC2024.UserCode 
 {
     class Program
     {
@@ -10,8 +9,7 @@ namespace JsonSchema.GSoC2024.UserCode
             Console.WriteLine("Hello, World!");
         }
     }
+
     [Generated("person.json")]
-public partial class Cl
-{
-}
+    public partial class Cl { }
 }

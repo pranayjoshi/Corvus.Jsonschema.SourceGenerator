@@ -68,7 +68,7 @@ namespace JsonSchema.GSoC2024.PartialAttribute
                     });
 
             context.RegisterSourceOutput(classDeclarations.Combine(compilationFilesAndResolver),
-                static (spc, source) => Execute(source.Left, source.Right.AdditionalFiles, source.Right.Resolver, spc));
+                static (spc, source) => Execute(source.Left, source.Right.AdditionalFiles, spc));
         }
 
 
@@ -77,28 +77,38 @@ namespace JsonSchema.GSoC2024.PartialAttribute
             => node is ClassDeclarationSyntax { AttributeLists: { Count: > 0 } };
 
         private static (ClassDeclarationSyntax ClassDeclaration, string JsonPath, string Namespace) GetSemanticTargetForGeneration(GeneratorSyntaxContext context)
+{
+    var classDeclarationSyntax = (ClassDeclarationSyntax)context.Node;
+    foreach (var attributeList in classDeclarationSyntax.AttributeLists)
+    {
+        foreach (var attribute in attributeList.Attributes)
         {
-            var classDeclarationSyntax = (ClassDeclarationSyntax)context.Node;
-            foreach (var attributeList in classDeclarationSyntax.AttributeLists)
+            if (context.SemanticModel.GetSymbolInfo(attribute).Symbol is IMethodSymbol attributeSymbol)
             {
-                foreach (var attribute in attributeList.Attributes)
-                {
-                    if (context.SemanticModel.GetSymbolInfo(attribute).Symbol is IMethodSymbol attributeSymbol)
-                    {
-                        INamedTypeSymbol attributeContainingTypeSymbol = attributeSymbol.ContainingType;
-                        string fullName = attributeContainingTypeSymbol.ToDisplayString();
+                INamedTypeSymbol attributeContainingTypeSymbol = attributeSymbol.ContainingType;
+                string fullName = attributeContainingTypeSymbol.ToDisplayString();
 
-                        if (fullName == "GeneratedAttribute")
+                if (fullName == "GeneratedAttribute")
+                {
+                    // Assuming the first argument is the one we're interested in (jsonPath)
+                    if (attribute.ArgumentList?.Arguments[0].Expression is LiteralExpressionSyntax literalExpression)
+                    {
+                        var jsonPath = literalExpression.Token.ValueText; // Directly get the value text of the literal
+                        // Check if jsonPath ends with .json
+                        if (!jsonPath.EndsWith(".json"))
                         {
-                            var jsonPath = attribute.ArgumentList?.Arguments[0].Expression.ToString().Trim('"');
-                            var namespaceName = GetNamespace(classDeclarationSyntax);
-                            return (classDeclarationSyntax, jsonPath ?? "", namespaceName);
+                            // Skip this attribute if jsonPath does not end with .json
+                            continue;
                         }
+                        var namespaceName = GetNamespace(classDeclarationSyntax);
+                        return (classDeclarationSyntax, jsonPath, namespaceName);
                     }
                 }
             }
-            return (classDeclarationSyntax, "", "");
         }
+    }
+    return (classDeclarationSyntax, "", "");
+}
 
         private static string GetNamespace(ClassDeclarationSyntax classDeclaration)
         {
@@ -109,7 +119,6 @@ namespace JsonSchema.GSoC2024.PartialAttribute
         private static void Execute(
    (ClassDeclarationSyntax ClassDeclaration, string JsonPath, string Namespace) item,
    ImmutableArray<AdditionalText> additionalFiles,
-   CompoundDocumentResolver resolver,
    SourceProductionContext context)
         {
             var (classDeclaration, jsonPath, namespaceName) = item;
