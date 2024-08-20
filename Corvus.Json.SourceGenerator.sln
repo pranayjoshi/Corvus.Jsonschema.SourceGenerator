@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35209.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Corvus.Json.SourceGenerator", "Corvus.Json.SourceGenerator\Corvus.Json.SourceGenerator.csproj", "{8623BD2C-4B32-4619-8D29-09477F6E531B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsumeGenerator", "ConsumeGenerator\ConsumeGenerator.csproj", "{F55E79B2-B9FE-4E04-8C94-0800C7ACC4EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8623BD2C-4B32-4619-8D29-09477F6E531B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8623BD2C-4B32-4619-8D29-09477F6E531B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8623BD2C-4B32-4619-8D29-09477F6E531B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8623BD2C-4B32-4619-8D29-09477F6E531B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F55E79B2-B9FE-4E04-8C94-0800C7ACC4EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F55E79B2-B9FE-4E04-8C94-0800C7ACC4EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F55E79B2-B9FE-4E04-8C94-0800C7ACC4EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F55E79B2-B9FE-4E04-8C94-0800C7ACC4EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2028C7B4-2957-4BF1-A864-ECDF2ED7F3E5}
+	EndGlobalSection
+EndGlobal

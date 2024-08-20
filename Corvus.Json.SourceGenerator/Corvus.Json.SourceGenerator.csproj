@@ -1,0 +1,104 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>12.0</LangVersion>
+        <Nullable>enable</Nullable>
+        <ProjectName>Coruvs.Json.SourceGenerator</ProjectName>
+        <IsRoslynComponent>true</IsRoslynComponent>
+        <EnforceExtendedAnalyzerRules>true</EnforceExtendedAnalyzerRules>
+        <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+        <IsPackable>true</IsPackable>
+    </PropertyGroup>
+
+    <PropertyGroup Label="NuGet">
+        <DevelopmentDependency>true</DevelopmentDependency>
+        <NoWarn>$(NoWarn);nullable;NU5128</NoWarn>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(OutputPath)\$(AssemblyName).dll" Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+        <None Include="$(AssemblyName).props" Pack="true" PackagePath="build" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.10.0" PrivateAssets="all" />
+        <PackageReference Include="H.Generators.Extensions" Version="1.22.0" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="PolySharp" Version="1.14.1" PrivateAssets="all" />
+        <PackageReference Include="System.Text.Json" Version="8.0.4" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Corvus.Json.ExtendedTypes" Version="4.0.0-preview.5" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Corvus.Json.CodeGeneration" Version="4.0.0-preview.5" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Corvus.Json.CodeGeneration.4" Version="4.0.0-preview.5" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Corvus.Json.CodeGeneration.6" Version="4.0.0-preview.5" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Corvus.Json.CodeGeneration.7" Version="4.0.0-preview.5" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Corvus.Json.CodeGeneration.201909" Version="4.0.0-preview.5" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Corvus.Json.CodeGeneration.202012" Version="4.0.0-preview.5" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Corvus.Json.CodeGeneration.OpenApi30" Version="4.0.0-preview.5" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Corvus.Json.CodeGeneration.CorvusVocabulary" Version="4.0.0-preview.5" PrivateAssets="all" GeneratePathProperty="true" />
+        <PackageReference Include="Corvus.Json.CodeGeneration.CSharp" Version="4.0.0-preview.5" PrivateAssets="all" GeneratePathProperty="true" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="metaschema\corvus\meta\corvus-extensions.json" />
+        <EmbeddedResource Include="metaschema\corvus\schema.json" />
+        <EmbeddedResource Include="metaschema\draft2019-09\meta\applicator.json" />
+        <EmbeddedResource Include="metaschema\draft2019-09\meta\content.json" />
+        <EmbeddedResource Include="metaschema\draft2019-09\meta\core.json" />
+        <EmbeddedResource Include="metaschema\draft2019-09\meta\format.json" />
+        <EmbeddedResource Include="metaschema\draft2019-09\meta\hyper-schema.json" />
+        <EmbeddedResource Include="metaschema\draft2019-09\meta\meta-data.json" />
+        <EmbeddedResource Include="metaschema\draft2019-09\meta\validation.json" />
+        <EmbeddedResource Include="metaschema\draft2019-09\schema.json" />
+        <EmbeddedResource Include="metaschema\draft2020-12\meta\applicator.json" />
+        <EmbeddedResource Include="metaschema\draft2020-12\meta\content.json" />
+        <EmbeddedResource Include="metaschema\draft2020-12\meta\core.json" />
+        <EmbeddedResource Include="metaschema\draft2020-12\meta\format-annotation.json" />
+        <EmbeddedResource Include="metaschema\draft2020-12\meta\format-assertion.json" />
+        <EmbeddedResource Include="metaschema\draft2020-12\meta\hyper-schema.json" />
+        <EmbeddedResource Include="metaschema\draft2020-12\meta\meta-data.json" />
+        <EmbeddedResource Include="metaschema\draft2020-12\meta\unevaluated.json" />
+        <EmbeddedResource Include="metaschema\draft2020-12\meta\validation.json" />
+        <EmbeddedResource Include="metaschema\draft2020-12\schema.json" />
+        <EmbeddedResource Include="metaschema\draft4\schema.json" />
+        <EmbeddedResource Include="metaschema\draft6\schema.json" />
+        <EmbeddedResource Include="metaschema\draft7\schema.json" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
+    </PropertyGroup>
+
+    <Target Name="_AddAnalyzersToOutput">
+        <Message Importance="High" Text="$(PkgH_Generators_Extensions)\lib\netstandard2.0\H.Generators.Extensions.dll" />
+        <Message Importance="High" Text="$(PkgMicrosoft_Bcl_AsyncInterfaces)\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll" />
+        <Message Importance="High" Text="$(PkgSystem_Text_Json)\lib\netstandard2.0\System.Text.Json.dll" />
+        <Message Importance="High" Text="$(PkgCorvus_Json_ExtendedTypes)\lib\netstandard2.0\Corvus.Json.ExtendedTypes.dll" />
+        <Message Importance="High" Text="$(PkgCorvus_Json_CodeGeneration)\lib\netstandard2.0\Corvus.Json.CodeGeneration.dll" />
+        <Message Importance="High" Text="$(PkgCorvus_Json_CodeGeneration_4)\lib\netstandard2.0\Corvus.Json.CodeGeneration.4.dll" />
+        <Message Importance="High" Text="$(PkgCorvus_Json_CodeGeneration_6)\lib\netstandard2.0\Corvus.Json.CodeGeneration.6.dll" />
+        <Message Importance="High" Text="$(PkgCorvus_Json_CodeGeneration_7)\lib\netstandard2.0\Corvus.Json.CodeGeneration.7.dll" />
+        <Message Importance="High" Text="$(PkgCorvus_Json_CodeGeneration_201909)\lib\netstandard2.0\Corvus.Json.CodeGeneration.201909.dll" />
+        <Message Importance="High" Text="$(PkgCorvus_Json_CodeGeneration_202012)\lib\netstandard2.0\Corvus.Json.CodeGeneration.202012.dll" />
+        <Message Importance="High" Text="$(PkgCorvus_Json_CodeGeneration_OpenApi30)\lib\netstandard2.0\Corvus.Json.CodeGeneration.OpenApi30.dll" />
+        <Message Importance="High" Text="$(PkgCorvus_Json_CodeGeneration_CorvusVocabulary)\lib\netstandard2.0\Corvus.Json.CodeGeneration.CorvusVocabulary.dll" />
+        <Message Importance="High" Text="$(PkgCorvus_Json_CodeGeneration_CSharp)\lib\netstandard2.0\Corvus.Json.CodeGeneration.CSharp.dll" />
+
+        <ItemGroup>
+            <TfmSpecificPackageFile Include="$(PkgH_Generators_Extensions)\lib\netstandard2.0\H.Generators.Extensions.dll" PackagePath="analyzers/dotnet/cs" />
+            <TfmSpecificPackageFile Include="$(PkgMicrosoft_Bcl_AsyncInterfaces)\lib\netstandard2.0\Microsoft.Bcl.AsyncInterfaces.dll" PackagePath="analyzers/dotnet/cs" />
+            <TfmSpecificPackageFile Include="$(PkgSystem_Text_Json)\lib\netstandard2.0\System.Text.Json.dll" PackagePath="analyzers/dotnet/cs" />
+            <TfmSpecificPackageFile Include="$(PkgCorvus_Json_ExtendedTypes)\lib\netstandard2.0\Corvus.Json.ExtendedTypes.dll" PackagePath="analyzers/dotnet/cs" />
+            <TfmSpecificPackageFile Include="$(PkgCorvus_Json_CodeGeneration_4)\lib\netstandard2.0\Corvus.Json.CodeGeneration.4.dll" PackagePath="analyzers/dotnet/cs" />
+            <TfmSpecificPackageFile Include="$(PkgCorvus_Json_CodeGeneration_6)\lib\netstandard2.0\Corvus.Json.CodeGeneration.6.dll" PackagePath="analyzers/dotnet/cs" />
+            <TfmSpecificPackageFile Include="$(PkgCorvus_Json_CodeGeneration_7)\lib\netstandard2.0\Corvus.Json.CodeGeneration.7.dll" PackagePath="analyzers/dotnet/cs" />
+            <TfmSpecificPackageFile Include="$(PkgCorvus_Json_CodeGeneration_201909)\lib\netstandard2.0\Corvus.Json.CodeGeneration.201909.dll" PackagePath="analyzers/dotnet/cs" />
+            <TfmSpecificPackageFile Include="$(PkgCorvus_Json_CodeGeneration_202012)\lib\netstandard2.0\Corvus.Json.CodeGeneration.202012.dll" PackagePath="analyzers/dotnet/cs" />
+            <TfmSpecificPackageFile Include="$(PkgCorvus_Json_CodeGeneration_OpenApi30)\lib\netstandard2.0\Corvus.Json.CodeGeneration.OpenApi30.dll" PackagePath="analyzers/dotnet/cs" />
+            <TfmSpecificPackageFile Include="$(PkgCorvus_Json_CodeGeneration_CorvusVocabulary)\lib\netstandard2.0\Corvus.Json.CodeGeneration.CorvusVocabulary.dll" PackagePath="analyzers/dotnet/cs" />
+            <TfmSpecificPackageFile Include="$(PkgCorvus_Json_CodeGeneration_CSharp)\lib\netstandard2.0\Corvus.Json.CodeGeneration.CSharp.dll" PackagePath="analyzers/dotnet/cs" />
+        </ItemGroup>
+    </Target>
+</Project>
